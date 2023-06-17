@@ -1,0 +1,57 @@
+<div ngClass="cart-container">
+    <div>
+        <form #form="ngForm"  [formGroup]="myForm" ngClass=".form-margin" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" formControlName="name" id="name">
+            </div>
+            <div *ngIf="f.name.invalid && f.name.dirty">
+                <div *ngIf="f.name?.errors!['required']" class="invalid">
+                  Please provide a name.
+                </div>
+                <div *ngIf="f.name.errors!['minlength']" class="invalid">Name should be more than 5 character.</div>
+            </div>
+            <div class="mb-3">
+              <label for="nameAr" class="form-label">Name Arabic</label>
+              <input type="text" class="form-control" name="nameAr" formControlName="nameAr" id="nameAr"> 
+            </div>
+            <div *ngIf="f.nameAr.invalid && f.nameAr.dirty">
+                <div *ngIf="f.nameAr?.errors!['required']" class="invalid">
+                  Please provide an arabic name.
+                </div>
+                <div *ngIf="f.nameAr.errors!['minlength']" class="invalid">Name arabic should be more than 5 character.</div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" name="description" formControlName="description" id="nameAr"> 
+              </div>
+              <div *ngIf="f.description.invalid && f.description.dirty">
+                  <div *ngIf="f.description?.errors!['required']" class="invalid">
+                    Please provide a description.
+                  </div>
+                  <div *ngIf="f.description.errors!['minlength']" class="invalid">Description should be more than 5 character.</div>
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" name="price" formControlName="price" id="price"> 
+              </div>
+              <div *ngIf="f.price.invalid && f.price.dirty">
+                  <div *ngIf="f.price?.errors!['required']" class="invalid">
+                    Please provide a price.
+                  </div>
+              </div>
+              <div class="mb-3">
+                <label for="Image" class="form-label">Image</label>
+                <input type="file"  formControlName="file" class="form-control" id="file" name="file" (change)="onFileChange($event)">
+                <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+                  <div *ngIf="f.file.errors!['required']">File is required.</div>
+              </div>
+              </div>
+              <div class="mb-3">
+                <input type="checkbox" name="hasAvialableStock" formControlName="hasAvailableStock" id="hasAvialableStock">
+                <label for="hasAvialableStock" class="form-label">  Has Avialable Stock</label>
+              </div>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>                   
+          </form>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div ngClass="product-container">
+    <a routerLink="/product/{{ product.id }}">
+        <img src="{{ product.imageURL }}" alt="" ngClass="product-image">
+    </a>
+    <h5>{{ product.name }}</h5>
+    <h5>{{ product.nameAr }}</h5>
+    <h6> ${{ product.price }}</h6>
+    <div>
+        <button ngClass="btn btn-primary btn-danger" (click)="Delete(product.id)">Delete</button>
+    </div>    
+</div>
