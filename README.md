@@ -1,27 +1,24 @@
 # OnlineShopFE
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+This is the front end of a small app called Onlineshop.
+It is built with angular version 16.1.0.
 
-## Development server
+## The Arch:
+It has four components:
+1. Product List, it is used for the listing page.
+2. Product Item, it is used to show the product details.
+3. Product Details, it is used for creating new products.
+4. Header, it renders the header of the site.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+It has 3 data models:
+1. ProductData, contains the product data returned from the backend.
+2. CategoryData, contains the category data.
+3. ProductPayload, for arranging the data to be sent to the  backend.
 
-## Code scaffolding
+it has 1 service:
+ProductService, to handle getting and manipulating the product with the backend.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## To run the project
+1. Clone the rep.
+2. 
+3. Make sure the backend is working on port 7010, 
